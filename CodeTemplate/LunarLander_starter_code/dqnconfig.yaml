@@ -1,0 +1,27 @@
+agent:
+    #buffer_size:   # replay buffer size
+    #lr:   # learning rate for optimizer
+    #state_size: 
+    #action_size: 
+    #seed : 
+    #device : 'cpu'
+    #tau:  
+training:
+    #n_episodes: 
+    #max_traj_len:
+    #batch_size:
+    #gamma: 
+    #checkpoint_path : "./checkpoint/ckpt.pth"
+    #eps_start: 
+    #eps_end: 
+    #eps_decay:
+    #av_window: 
+    #wandblogging: True
+    #wandb_mode: 'offline'
+    #wandb_run_name: 'AIL722_A2_DQNRun'
+env:    
+    name: 'LunarLander-v2'
+    Options: {continuous: False, gravity: -10.0, enable_wind: False, wind_power: 15.0 ,turbulence_power: 1.5} 
+
+
+# You can add any more configuration you require

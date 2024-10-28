@@ -1,0 +1,31 @@
+agent:
+  buffer_size: 100000  # replay buffer size
+  lr: 0.0005  # learning rate
+  state_size: 8  # LunarLander state size
+  action_size: 4  # LunarLander action size
+  seed: 42
+  device: 'cuda' if torch.cuda.is_available() else 'cpu'
+  tau: 0.001  # for soft update of target parameters
+
+training:
+  n_episodes: 2000  # maximum number of training episodes
+  max_traj_len: 1000  # maximum trajectory length
+  batch_size: 64
+  gamma: 0.99  # discount factor
+  checkpoint_path: "./checkpoint/ckpt.pth"
+  eps_start: 1.0  # starting epsilon for exploration
+  eps_end: 0.01  # minimum epsilon
+  eps_decay: 0.995  # epsilon decay rate
+  av_window: 100  # window for averaging scores
+  wandblogging: True
+  wandb_mode: 'offline'
+  wandb_run_name: 'AIL722_A2_DQNRun'
+
+env:
+  name: 'LunarLander-v2'
+  Options: 
+    continuous: False
+    gravity: -10.0
+    enable_wind: True
+    wind_power: 15.0
+    turbulence_power: 1.5
